@@ -5,6 +5,7 @@ const reveals = document.querySelectorAll(".reveal");
 const counters = document.querySelectorAll("[data-count]");
 const storedMode = localStorage.getItem("portfolio-mode");
 const preferredMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+const mobileHeaderQuery = window.matchMedia("(max-width: 720px)");
 
 const applyMode = (mode) => {
     root.dataset.mode = mode;
@@ -26,6 +27,11 @@ const updateHeaderOffset = () => {
         return;
     }
 
+    if (mobileHeaderQuery.matches) {
+        root.style.setProperty("--header-offset", "1rem");
+        return;
+    }
+
     const headerHeight = Math.ceil(headerShell.getBoundingClientRect().height + 20);
     root.style.setProperty("--header-offset", `${headerHeight}px`);
 };
@@ -33,6 +39,7 @@ const updateHeaderOffset = () => {
 updateHeaderOffset();
 
 window.addEventListener("resize", updateHeaderOffset);
+mobileHeaderQuery.addEventListener("change", updateHeaderOffset);
 
 if ("ResizeObserver" in window && headerShell) {
     const headerObserver = new ResizeObserver(() => updateHeaderOffset());

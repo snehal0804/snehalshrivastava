@@ -799,6 +799,10 @@ h3 {
 }
 
 @media (max-width: 720px) {
+    .header-shell {
+        display: none;
+    }
+
     .page-shell {
         width: min(100% - 1rem, 1240px);
     }
@@ -808,10 +812,6 @@ h3 {
     .contact-banner {
         padding: 1.3rem;
         border-radius: 1.6rem;
-    }
-
-    .topbar {
-        width: min(100% - 1rem, 1240px);
     }
 
     .skills-grid {

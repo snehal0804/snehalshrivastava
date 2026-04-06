@@ -800,7 +800,10 @@ h3 {
 
 @media (max-width: 720px) {
     .header-shell {
-        display: none;
+        position: static;
+        width: min(100% - 1rem, 1240px);
+        margin: 0 auto;
+        padding-top: 1rem;
     }
 
     .page-shell {
@@ -811,6 +814,11 @@ h3 {
     .section-card,
     .contact-banner {
         padding: 1.3rem;
+        border-radius: 1.6rem;
+    }
+
+    .topbar {
+        width: 100%;
         border-radius: 1.6rem;
     }
 

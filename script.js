@@ -1,5 +1,6 @@
 const root = document.documentElement;
 const modeToggle = document.querySelector("[data-mode-toggle]");
+const headerShell = document.querySelector(".header-shell");
 const reveals = document.querySelectorAll(".reveal");
 const counters = document.querySelectorAll("[data-count]");
 const storedMode = localStorage.getItem("portfolio-mode");
@@ -19,6 +20,28 @@ const applyMode = (mode) => {
 };
 
 applyMode(storedMode || preferredMode);
+
+const updateHeaderOffset = () => {
+    if (!headerShell) {
+        return;
+    }
+
+    const headerHeight = Math.ceil(headerShell.getBoundingClientRect().height + 20);
+    root.style.setProperty("--header-offset", `${headerHeight}px`);
+};
+
+updateHeaderOffset();
+
+window.addEventListener("resize", updateHeaderOffset);
+
+if ("ResizeObserver" in window && headerShell) {
+    const headerObserver = new ResizeObserver(() => updateHeaderOffset());
+    headerObserver.observe(headerShell);
+}
+
+if (document.fonts?.ready) {
+    document.fonts.ready.then(updateHeaderOffset);
+}
 
 if (modeToggle) {
     modeToggle.addEventListener("click", () => {

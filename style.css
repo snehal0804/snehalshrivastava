@@ -13,14 +13,14 @@
     --accent-soft: #efe2ce;
     --button-text: #fffaf3;
     --nav-bg: rgba(255, 250, 242, 0.82);
-    --hero-top: rgba(255, 250, 244, 0.94);
-    --hero-bottom: rgba(239, 229, 212, 0.96);
-    --card-top: rgba(255, 250, 243, 0.94);
-    --card-bottom: rgba(240, 229, 212, 0.94);
-    --card-muted-top: rgba(248, 241, 230, 0.92);
-    --card-muted-bottom: rgba(236, 225, 208, 0.94);
-    --featured-top: rgba(255, 248, 238, 0.95);
-    --featured-bottom: rgba(233, 219, 200, 0.96);
+    --hero-top: #fffaf4;
+    --hero-bottom: #efe5d4;
+    --card-top: #fff9f1;
+    --card-bottom: #f0e6d5;
+    --card-muted-top: #f8f1e6;
+    --card-muted-bottom: #ece1d0;
+    --featured-top: #fff7ee;
+    --featured-bottom: #e9dbc8;
     --contact-top: rgba(84, 67, 52, 0.96);
     --contact-bottom: rgba(67, 52, 40, 0.98);
     --contact-text: #f8efe3;
@@ -51,14 +51,14 @@
     --accent-soft: #241d18;
     --button-text: #17110d;
     --nav-bg: rgba(26, 21, 18, 0.88);
-    --hero-top: rgba(36, 28, 23, 0.94);
-    --hero-bottom: rgba(27, 22, 18, 0.98);
-    --card-top: rgba(39, 31, 26, 0.94);
-    --card-bottom: rgba(29, 24, 20, 0.96);
-    --card-muted-top: rgba(44, 35, 29, 0.92);
-    --card-muted-bottom: rgba(31, 25, 21, 0.96);
-    --featured-top: rgba(46, 35, 28, 0.95);
-    --featured-bottom: rgba(32, 26, 21, 0.98);
+    --hero-top: #241c17;
+    --hero-bottom: #1b1612;
+    --card-top: #27201b;
+    --card-bottom: #1d1814;
+    --card-muted-top: #2c231d;
+    --card-muted-bottom: #1f1915;
+    --featured-top: #2e231c;
+    --featured-bottom: #201a15;
     --contact-top: rgba(44, 36, 30, 0.98);
     --contact-bottom: rgba(27, 21, 18, 1);
     --contact-text: #f5e8d9;
@@ -778,10 +778,6 @@ h3 {
 }
 
 @media (max-width: 920px) {
-    :root {
-        --header-offset: 11rem;
-    }
-
     .topbar {
         align-items: stretch;
         flex-direction: column;
@@ -803,10 +799,6 @@ h3 {
 }
 
 @media (max-width: 720px) {
-    :root {
-        --header-offset: 11.6rem;
-    }
-
     .page-shell {
         width: min(100% - 1rem, 1240px);
     }
